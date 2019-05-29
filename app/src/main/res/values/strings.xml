@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Github MVP</string>
+    <string name="user_list_update_notification">User list has been updated</string>
+</resources>
