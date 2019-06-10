@@ -1,27 +1,33 @@
-package com.example.githubmvp.view
+package com.example.githubmvp.ui.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.githubmvp.R
-import com.example.githubmvp.adapter.UserAdapter
-import com.example.githubmvp.contract.UserListView
-import com.example.githubmvp.model.User
+import com.example.githubmvp.data.model.User
 import com.example.githubmvp.presenter.UserListPresenter
+import com.example.githubmvp.ui.adapter.UserAdapter
+import com.example.githubmvp.ui.contract.UserListView
+import dagger.Component
 import kotlinx.android.synthetic.main.activity_user_list.*
+import javax.inject.Inject
 
 class UserListActivity : AppCompatActivity(), UserListView {
 
     private val context = this
-    private val TAG = UserListActivity::class.java.simpleName
 
-    private val userListPresenter = UserListPresenter(this)
-    private val userAdapter = UserAdapter(emptyList())
+    @Inject
+    lateinit var userListPresenter: UserListPresenter
+
+    @Inject
+    lateinit var userAdapter: UserAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_list)
+
+        injectDepedency()
 
         userListRecycler.apply {
             adapter = userAdapter
@@ -32,6 +38,9 @@ class UserListActivity : AppCompatActivity(), UserListView {
         userListRefresh.setOnRefreshListener {
             fetchUserList()
         }
+    }
+
+    private fun injectDepedency() {
     }
 
     override fun showUserList(users: List<User>) {
@@ -47,7 +56,7 @@ class UserListActivity : AppCompatActivity(), UserListView {
         userListRefresh.isRefreshing = loadingState
     }
 
-    fun fetchUserList() {
+    private fun fetchUserList() {
         userListPresenter.getAllUsers()
     }
 }

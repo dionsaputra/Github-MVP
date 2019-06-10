@@ -1,4 +1,4 @@
-package com.example.githubmvp.adapter
+package com.example.githubmvp.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.githubmvp.R
-import com.example.githubmvp.model.User
+import com.example.githubmvp.data.model.User
 import kotlinx.android.synthetic.main.item_user.view.*
 
 class UserAdapter(var data: List<User>) : RecyclerView.Adapter<UserAdapter.UserHolder>() {

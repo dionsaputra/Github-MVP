@@ -1,6 +1,6 @@
-package com.example.githubmvp.contract
+package com.example.githubmvp.ui.contract
 
-import com.example.githubmvp.model.User
+import com.example.githubmvp.data.model.User
 
 interface UserListView {
     fun showUserList(users: List<User>)

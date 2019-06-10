@@ -1,12 +1,16 @@
 package com.example.githubmvp.presenter
 
-import com.example.githubmvp.contract.UserListView
-import com.example.githubmvp.model.HttpStatus
-import com.example.githubmvp.repository.UserRepository
+import com.example.githubmvp.ui.contract.UserListView
+import com.example.githubmvp.data.repository.UserRepository
 
-class UserListPresenter(val userListView: UserListView) {
+class UserListPresenter() {
 
+    private lateinit var userListView: UserListView
     private val userRepo = UserRepository.getInstance()
+
+    fun attachView(userListView: UserListView) {
+        this.userListView = userListView
+    }
 
     fun getAllUsers() {
         userListView.showLoadingState(true)

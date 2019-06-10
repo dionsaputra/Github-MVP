@@ -1,4 +1,4 @@
-package com.example.githubmvp.model
+package com.example.githubmvp.data.model
 
 import com.google.gson.annotations.SerializedName
 
@@ -21,5 +21,4 @@ data class User(
     @SerializedName("received_events_url") val receivedEventsUrl: String?,
     @SerializedName("type") val type: String?,
     @SerializedName("site_admin") val siteAdmin: Boolean?
-) {
-}
+) {}

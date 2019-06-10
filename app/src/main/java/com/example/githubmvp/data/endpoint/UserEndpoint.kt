@@ -1,6 +1,6 @@
-package com.example.githubmvp.endpoint
+package com.example.githubmvp.data.endpoint
 
-import com.example.githubmvp.model.User
+import com.example.githubmvp.data.model.User
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call

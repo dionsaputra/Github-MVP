@@ -1,8 +1,8 @@
-package com.example.githubmvp.repository
+package com.example.githubmvp.data.repository
 
-import com.example.githubmvp.endpoint.UserEndpoint
-import com.example.githubmvp.model.HttpStatus
-import com.example.githubmvp.model.User
+import com.example.githubmvp.data.endpoint.UserEndpoint
+import com.example.githubmvp.data.model.HttpStatus
+import com.example.githubmvp.data.model.User
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
